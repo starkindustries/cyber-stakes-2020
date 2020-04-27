@@ -18,7 +18,7 @@ def encodeFromBinary(binary, format):
     if format == "oct":
         return oct(int(binary, 2))[2:]
     if format == "bin":
-        return binary
+        return binary[2:]
 
 def decodeToBinary(source, format):
     if format == "raw":
@@ -32,14 +32,18 @@ def decodeToBinary(source, format):
     if format == "oct":
         return bin(int(source, 8))
     if format == "bin":
-        return source
+        return '0b' + source
 
 def translate(source, fromType, toType):
     temp = decodeToBinary(source, fromType)
+    print(f"SOURCE: {source}")
+    print(f"TEMP: {temp}")
     return encodeFromBinary(temp, toType)
 
 def testDecodeEncode(source, format):
     answer = decodeToBinary(source, format)
+    print(f"SOURCE: {source}")
+    print(f"ANSWER: {answer}")
     answer = encodeFromBinary(answer, format)    
     if source == answer:
         print(f"PASS: {source}, {format} decoded/encoded successful!")
@@ -53,9 +57,17 @@ def testSuite():
     testDecodeEncode("123456789", "dec")
     testDecodeEncode("144", "oct")
     testDecodeEncode("0b0101", "bin")
+    answer = translate("YEIw==", "b64", "bin")
+    expectedAnswer = "100010001110010010111010111111111111"
+    if answer == expectedAnswer:
+        print("PASS: Translate b64 to bin successful!")
+    else:
+        print(f"FAIL: Translate b64 to bin failed! \nExpected: [{expectedAnswer}]\n  Answer: [{answer}]\n type: [{type(answer)}]")
 
+answer = translate("1110110011110000111010101100100010110000111101101011001010010110101000000111000011100010011010001110101010111000101011001100010010110110010111100111110011101010111101001001010001100110101000001101111010010010100001101001000010110100011100000111111010111110011010101110001011110100110011000111100011000100011101000101100011001010110001000101000001100110010010100101110001100010100000101011101010011010111101001001100011000110101000001010101010111100011101100101011010001100100101001011001010010010110101100111000", "bin", "dec")
+print(f"ANSWER: {answer}")
 # testSuite()
-# exit()
+exit()
 
 # 'argparse' is a very useful library for building python tools that are easy
 # to use from the command line.  It greatly simplifies the input validation
@@ -137,3 +149,6 @@ sock.send((answer + "\n").encode()) # The "\n" is important for the server's
                                     # sure there is only one sent for each
                                     # answer.
 
+f = sock.makefile()
+while True:
+    line = f.readline().strip()
