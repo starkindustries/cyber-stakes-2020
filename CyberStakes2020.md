@@ -266,13 +266,24 @@ xinet_startup.sh
 '''
 Then 'cat flag.txt' produces the flag.
 
-### Proxy List
+## Proxy List
+### Prompt
+We need you to perform geolocation analysis on this list of IPs. We have attributed it to a malicious proxy network. Report back with the prevalent country of origin: ips.txt
 
+### Hints
+The flag is the name of the origin country (case-sensitive) found most frequently in the list
+Offline geolocation IP analysis can be scripted with a python package or two
+These IPs were collected in late 2019, if necessary you may need to use 'historical' geolocation data
+
+### Notes
+Need to install geoip2 python library:
 pip3 install geoip2
+
+Need to download the GeoLite2-Country.mmdb database file:
 https://www.maxmind.com/en/accounts/290137/geoip/downloads
 
+Sample source code for geoip2:
 https://geoip2.readthedocs.io/en/latest/
-
 >>> import geoip2.database
 >>>
 >>> # This creates a Reader object. You should use the same object
