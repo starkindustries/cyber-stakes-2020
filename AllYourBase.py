@@ -1,3 +1,5 @@
+# All Your Base Are Belong to Us - Points: 50
+
 #!/usr/bin/python3
 import argparse
 import socket
