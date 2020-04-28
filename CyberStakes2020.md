@@ -265,3 +265,48 @@ templates
 xinet_startup.sh
 '''
 Then 'cat flag.txt' produces the flag.
+
+### Proxy List
+
+pip3 install geoip2
+https://www.maxmind.com/en/accounts/290137/geoip/downloads
+
+https://geoip2.readthedocs.io/en/latest/
+
+>>> import geoip2.database
+>>>
+>>> # This creates a Reader object. You should use the same object
+>>> # across multiple requests as creation of it is expensive.
+>>> reader = geoip2.database.Reader('/path/to/GeoLite2-City.mmdb')
+>>>
+>>> # Replace "city" with the method corresponding to the database
+>>> # that you are using, e.g., "country".
+>>> response = reader.city('128.101.101.101')
+>>>
+>>> response.country.iso_code
+'US'
+>>> response.country.name
+'United States'
+>>> response.country.names['zh-CN']
+u'美国'
+>>>
+>>> response.subdivisions.most_specific.name
+'Minnesota'
+>>> response.subdivisions.most_specific.iso_code
+'MN'
+>>>
+>>> response.city.name
+'Minneapolis'
+>>>
+>>> response.postal.code
+'55455'
+>>>
+>>> response.location.latitude
+44.9733
+>>> response.location.longitude
+-93.2323
+>>>
+>>> response.traits.network
+IPv4Network('128.101.101.0/24')
+>>>
+>>> reader.close()
