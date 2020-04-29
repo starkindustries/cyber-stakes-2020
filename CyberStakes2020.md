@@ -321,3 +321,23 @@ u'美国'
 IPv4Network('128.101.101.0/24')
 >>>
 >>> reader.close()
+
+## Not So Meta - Points: 50
+### Prompt
+Look, it's the flag! Oh wait...it looks like we need to take a closer look... not_so_meta.jpg
+
+### Hints
+How do images keep contextual information when they're created? (e.g., GPS data, creation timestamp, etc.)
+How do you encode binary data into common ASCII characters?
+
+### Notes
+Starting off with hexdump, we can see that there is some exif data stored in the jpg file. 
+hexdump -C not_so_meta.jpg > not_so_meta_hex.txt
+
+To view just the ascii bytes, we can use the 'strings' command. 
+strings -n 64 not_so_meta.jpg > not_so_meta.txt
+
+This shows a few lines of text including:
+<xmp:ItsTheFlag>QUNJezhhM2E0OWJjZWUxM2MzZGNlYzE4MGQzNDgxZX0=</xmp:ItsTheFlag>
+
+Convert that base64 string to ascii to get the flag.
