@@ -356,3 +356,53 @@ This shows a few lines of text including:
 <xmp:ItsTheFlag>QUNJezhhM2E0OWJjZWUxM2MzZGNlYzE4MGQzNDgxZX0=</xmp:ItsTheFlag>
 
 Convert that base64 string to ascii to get the flag.
+
+## Controlled Access - Points 50
+### Prompt
+We've been asked to help a certificate authority figure out what a device they found plugged into their network was doing. They were able to dump the firmware and would like to know if it allowed the attacker to connect to any devices that their firewall (which blocks inbound SSH) would have stopped. Their internal domain uses 'digisigner.local' for DNS host names. The flag is the hostname of the internal host that the hacker targeted (i.e. ACI{[local hostname targeted]}).
+
+### Hints
+A tool like binwalk might be useful for inspecting the firmware.
+https://github.com/ReFirmLabs/binwalk/wiki/Quick-Start-Guide
+
+The documentation mentions that the 'attack' payload for this device lives in a very particular spot on the filesystem...
+https://docs.hak5.org/hc/en-us/categories/360002117973-Shark-Jack
+
+### Notes
+First step is to install binwalk
+$ sudo python3 setup.py install
+
+Next run binwalk on the firmware file. 
+$ binwalk firmware.bin
+
+It lists a few symbols contained in the firmware:
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             uImage header, header size: 64 bytes, header CRC: 0x1E09FA95, created: 2019-11-06 04:52:00, image size: 1467840 bytes, Data Address: 0x80000000, Entry Point: 0x80000000, data CRC: 0x71E0036C, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: lzma, image name: "MIPS OpenWrt Linux-4.14.109"
+64            0x40            LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 4644588 bytes
+1467904       0x166600        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 7125282 bytes, 1024 inodes, blocksize: 262144 bytes, created: 2020-04-24 00:36:54
+
+One of the symbols is: "Squashfs filesystem", which starts at offset 1467904. This is important for the next step.
+
+We want to isolate the squashfs filesystem so that we can investigate it further. dd is a command-line utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy files. We'll use 'dd' to copy the squashfs section to a separate file.
+
+$ dd if=firmware.bin skip=1467904 bs=1 of=sharkjack.sqfs
+
+Then we need to unsquash the file system so that we can read it.
+$ sudo unsquashfs sharkjack.sqfs
+
+From here, the file system is extracted to a folder called 'squashfs-root'.
+
+The Shark Jack Directory Structure page shows that the payload exists in /root/payload.
+https://docs.hak5.org/hc/en-us/articles/360034130934-Directory-Structure
+
+/root/loot/ – home to log files and other loot stored by payloads
+/root/payload/ – home to the payload which will execute when the switch is flipped to the Attack mode
+/tmp/ – volatile memory for temporary storage during payload execution
+
+In the payload.sh file, we can find the internal_host required for the flag.
+INTERNAL_HOST=rootca.digisigner.local
+
+Poking around router firmware using Binwalk
+https://www.youtube.com/watch?v=46tEIFAp7gc
