@@ -195,7 +195,22 @@ While many binary exploitation situations involve "non-standard" inputs (such as
 If you are new to binary exploitation (or C code), we really recommend reading the source file in its entirety as the comments try to explain many of the key concepts for this category of problems. For this specific problem, anyone not familiar C should definitely read the source file because the behavior of s.numbers[-1] is very different between C and some other popular languages (e.g. Python).
 
 ### Notes
-https://stackoverflow.com/questions/10057443/explain-the-concept-of-a-stack-frame-in-a-nutshell
+The source code tells us that the flag is stored in s.numbers[-1]. The vulnerable code lies in this line:
+printf("%d * %d = %d which ends in a '%s'\r\n", first, second, tmp, s.numbers[tmp % 10]);
+
+In s.numbers[tmp % 10], we can control the value of tmp because tmp is just the product of the two numbers we entered earlier.
+
+So we want tmp to equal -1 so that s.numbers[-1] can give us the flag. But how can we multiply two positive numbers to get -1. This is where the two's complement hint comes in. With two's complement, you can convert any positive number to its negative complement by flipping all of its bits and then adding 1. See BenEater's video below for a great explanation. 
+
+With this in mind, we know that -1 is equal to 1111...1111 in binary. So to get this result, we just need to multiple two numbers to get -1. An unsigned 32bit integer with all 1s is equal to 4,294,967,295. Divide this by 5 to get: 858993459. Therefore 5 and 858993459 are our two numbers. Plug these into the program and get the flag.
+
+$ nc challenge.acictf.com 19919
+
+Twos complement: Negative numbers in binary
+https://www.youtube.com/watch?v=4qH4unVtJkE
+
+Max Unsigned Int
+https://en.wikipedia.org/wiki/4,294,967,295
 
 ## Over Time: Paid - Points: 50 
 
