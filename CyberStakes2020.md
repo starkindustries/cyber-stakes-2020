@@ -376,12 +376,13 @@ Next run binwalk on the firmware file.
 $ binwalk firmware.bin
 
 It lists a few symbols contained in the firmware:
-
+==============================================
 DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
 0             0x0             uImage header, header size: 64 bytes, header CRC: 0x1E09FA95, created: 2019-11-06 04:52:00, image size: 1467840 bytes, Data Address: 0x80000000, Entry Point: 0x80000000, data CRC: 0x71E0036C, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: lzma, image name: "MIPS OpenWrt Linux-4.14.109"
 64            0x40            LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 4644588 bytes
 1467904       0x166600        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 7125282 bytes, 1024 inodes, blocksize: 262144 bytes, created: 2020-04-24 00:36:54
+==============================================
 
 One of the symbols is: "Squashfs filesystem", which starts at offset 1467904. This is important for the next step.
 
