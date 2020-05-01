@@ -86,12 +86,12 @@ function findContract() {
 
 // https://ethereum.stackexchange.com/questions/2531/common-useful-javascript-snippets-for-geth/3478#3478
 
-// gtba("0xb4ba4b90df51d42a7c6093e92e1c7d22874c14f2") 2.5
-// gtba("0xae5165d3d0c9aa682557fe964c6da645b84e9e1d") 2.5
-// gtba("0xf387f84b74e05416679ebbdbc79b509f7f2caa47") 2.5
-// gtba("0x3ec2a3d11e177ea8bff7d6cd9df360ebcc52d584") 1.25 1.25 to same address
-// gtba("0x4da56f7f58bc14c785cee861d25b2c417fe6853f") 2.5 1571618645
-// gtba("0x167f7969ae2ecf157306f798f63929903a02d771") 2.5
+// gtba("0xb4ba4b90df51d42a7c6093e92e1c7d22874c14f2") 2.5       origin
+// gtba("0xae5165d3d0c9aa682557fe964c6da645b84e9e1d") 2.5       1st hop
+// gtba("0xf387f84b74e05416679ebbdbc79b509f7f2caa47") 2.5       2nd hop
+// gtba("0x3ec2a3d11e177ea8bff7d6cd9df360ebcc52d584") 1.25 1.25 to same address     3rd hop
+// gtba("0x4da56f7f58bc14c785cee861d25b2c417fe6853f") 2.5       4th hop
+// gtba("0x167f7969ae2ecf157306f798f63929903a02d771") 2.5       5th hop/contract address
 
 // https://ethereum.stackexchange.com/questions/1871/how-to-find-contracts-address
 // ====================
