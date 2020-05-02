@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-from Crypto.Cipher import AES
+from Cryptodome.Cipher import AES
 from Crypto.Random import get_random_bytes
 
 import sys
 import zlib
 import binascii
 
-# print(dir(AES))
-# exit()
-
 '''
 Firmware class encapsulates all the information needed to
 create a firmware image. It is also responsible for actually
 generating the image
 '''
+
+DEBUG = True
+NONCE = b'\x61\x61' # 61 = 'a' in ASCII
+KEY = NONCE * 8
+
+print(f"Nonce: {NONCE}, size: {len(NONCE)}")
+print(f"Key: {KEY}, size: {len(KEY)}")
 
 class firmware(object):
     def __init__(self):
@@ -25,6 +29,7 @@ class firmware(object):
         self.firmware_code = open("./car_code.bin", "rb").read()[0:64]
         self.aes_key = None
         self.device_key = open("./flag", "r").read()
+        print(f"Device key: {self.device_key}")
 
     def generate_image(self):
         img = "Rev:%s::Vin:%s::DeviceKey:%s::Name:%s::User_Title:%s::Code:%s" % (
@@ -38,9 +43,14 @@ class firmware(object):
         #sys.stderr.write("\n")
         compressed_img = zlib.compress(img.encode('utf-8'), level=9)
 
-        cipher = AES.new(self.aes_key, AES.MODE_GCM)
-        final = cipher.encrypt_and_digest(compressed_img)[0]
-
+        if DEBUG:
+            # Use default nonce 0xAA when in debug mode
+            cipher = AES.new(self.aes_key, AES.MODE_GCM, NONCE)
+        else:
+            cipher = AES.new(self.aes_key, AES.MODE_GCM)
+        final, tag = cipher.encrypt_and_digest(compressed_img)
+        
+        print(f"tag: {tag.hex()}")
         #sys.stderr.write("Legnth: %s" % len(final))
 
         if (len(final) > 229):
@@ -53,7 +63,11 @@ class firmware(object):
 class firmware_server(object):
     def __init__(self):
         self.flag = open("./flag", "rb").read()
-        self.aes_key = get_random_bytes(16)
+        if DEBUG:
+            self.aes_key = KEY
+        else:
+            self.aes_key = get_random_bytes(16)
+        print(f"AES key: {self.aes_key}")
 
         self.fw = firmware()
         self.final_img = None
@@ -90,29 +104,38 @@ class firmware_server(object):
         sys.stdout.flush()
 
     def decrypt_firmware(self):
-        print("Input HEX Encoded Firmware: ")
-        fw_img = input()
-
-        print("Input Encryption Nonce: ")
-        nonce = input()
-
-        print("Input Tag: ")
-        tag = input()
-
+        # Unhexlify firmware image
         try:
-            fw_img = binascii.unhexlify(fw_img)
+            print("Input HEX Encoded Firmware: ")
+            fw_img = input()
+            fw_img = binascii.unhexlify(fw_img)            
+        except Exception as e:
+            print(f"Error unhexlifying firmware image: {e}")
+            return
+
+        # Unhexlify nonce
+        try:
+            print("Input Encryption Nonce: ")
+            nonce = input()
             nonce = binascii.unhexlify(nonce)
+        except Exception as e:
+            print(f"Error unhexlifying nonce: {e}")
+            return
+
+        # Unhexlify tag
+        try: 
+            print("Input Tag: ")
+            tag = input()
             tag = binascii.unhexlify(tag)
         except Exception as e:
-            #sys.stderr.write(str(e))
-            print("Firmware Image must be Hex encoded")
+            print(f"Error when unhexlifying tag: {e}")
             return
 
         try:
             cipher = AES.new(self.aes_key, AES.MODE_GCM, nonce=nonce)
             compressed = cipher.decrypt_and_verify(fw_img, tag)
-        except:
-            print("Decryption Failed!")
+        except Exception as e:
+            print(f"Error decrypting firmware: {e}")            
             return
 
         try:
@@ -152,23 +175,24 @@ class firmware_server(object):
                 pass
 
 
+
+# -----------------------------------------------
+#          V.I.R.T.U.A.L.K.E.Y
+
+#            ___________ @ @
+#           /         (@\   @
+#           \___________/  _@
+#                     @  _/@ \_____
+#                      @/ \__/-="="`
+#                       \_ /
+#                        <|
+#                        <|
+#                        <|
+#                        `|
+
+#          V.I.R.T.U.A.L.K.E.Y
+# -----------------------------------------------
 MENU = """
------------------------------------------------
-         V.I.R.T.U.A.L.K.E.Y
-
-           ___________ @ @
-          /         (@\   @
-          \___________/  _@
-                    @  _/@ \_____
-                     @/ \__/-="="`
-                      \_ /
-                       <|
-                       <|
-                       <|
-                       `|
-
-         V.I.R.T.U.A.L.K.E.Y
------------------------------------------------
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 1. Create New Firmware
 2. Read Firmware
