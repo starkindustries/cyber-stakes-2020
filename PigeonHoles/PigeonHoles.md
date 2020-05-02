@@ -86,6 +86,9 @@ An example vin for the prompt:
 VIN (ascii): JH4KA8250MC004002
 VIN (hex):   0x 4a48344b41383235304d43303034303032
 
+VIN (ascii): 00000000000000000
+VIN (hex):   0x 3030303030303030303030303030303030
+
 Sample encryption variables
 nonce (ascii) = 'aa'
 nonce (hex) = 0x 6161

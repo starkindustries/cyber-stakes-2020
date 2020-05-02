@@ -48,6 +48,7 @@ class firmware(object):
             cipher = AES.new(self.aes_key, AES.MODE_GCM, NONCE)
         else:
             cipher = AES.new(self.aes_key, AES.MODE_GCM)
+            print(f"Nonce: {cipher.nonce.hex()}")
         final, tag = cipher.encrypt_and_digest(compressed_img)
         
         print(f"tag: {tag.hex()}")
