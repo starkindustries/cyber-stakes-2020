@@ -2649,7 +2649,7 @@
    time            : 1571618624
    gasPrice        : 1000000000
    gas             : 3000000
-   input           : 0xd0e30db0
+   input           : 0xd0e30db0 ********************* DEPOSIT *********************
 
   tx hash          : 0xf8eb271015825c266a25ab9f513892ccca5550ef2a2145edd781f8ba5c27f01e
    nonce           : 2
@@ -2792,7 +2792,7 @@
    time            : 1571618645
    gasPrice        : 1000000000
    gas             : 3000000
-   input           : 0xd0e30db0
+   input           : 0xd0e30db0 ***************** DEPOSIT *****************
 
   tx hash          : 0xc4517d40e6874489752bd1603a8f7c96ffc1bfb271b687193aeb06fbb81d52be
    nonce           : 0
@@ -2948,7 +2948,7 @@
    time            : 1571618678
    gasPrice        : 1000000000
    gas             : 3000000
-   input           : 0xd0e30db0
+   input           : 0xd0e30db0 ******************* DEPOSIT *******************
 
   tx hash          : 0x00ccdc7c8c8104d52d0d50bba30f6d51f1d5c5a4098e611ab32f813a44bc0711
    nonce           : 0
