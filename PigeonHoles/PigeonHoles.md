@@ -10,6 +10,7 @@ The flag will consist of ascii characters, digits, and underscores (_)
 The flag will contain a bit of '1337' speak
 
 ## Notes
+
 $ nc challenge.acictf.com 45098 
 -----------------------------------------------
          V.I.R.T.U.A.L.K.E.Y
@@ -40,7 +41,10 @@ $ python3 firmware_server.py
 
 Choosing option 1 and creating a new firmware, gives an error:
 
-AttributeError: module 'Crypto.Cipher.AES' has no attribute 'MODE_GCM'
+AttributeError: module 'Crypto.Cipher.AES' has no attribute 'MODE_GCM'. GCM Stands for Galois Counter Mode. 
+
+https://en.wikipedia.org/wiki/Galois/Counter_Mode
+https://youtu.be/g_eY7JXOc8U
 
 Stackoverflow suggests to check what modes are allows: 
 
@@ -77,7 +81,10 @@ def generate_image(self):
         self.user_title,
         self.firmware_code)
 
-The read firmware option is how we can get the flag contents. We just need to figure out the AES nonce and the AES key.
+The read firmware option is how we can get the flag contents. To solve we need:
+1. AES nonce 
+2. AES key
+3. Tag: Use nonce, key, and message to generate tag
 
 Sample flag:
 ACI{pigeon_holes_is_awesome}
