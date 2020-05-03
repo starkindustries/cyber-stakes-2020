@@ -106,7 +106,7 @@ AES key (hex) = 0x 61616161616161616161616161616161
 Hex encoded firmware using VIN, nonce, and key above:
 f039ec05ef3a689898d4bc3f636326c516a0935767a5525737ba9af30a1bab36cee0c0750e7401d275e583e1843441c380123bdc85263a99e36114da9730f1b0bd7ba12d885ca0869feae347162afc082c5381da23a225ee4484ce220dbfefc85282afbd1d5024ef0df3ed52897039c10f1ca04299dd215f
 
-Tag: 0x 9ab62e06248e8a598178732230431995
+Tag: 0x 9ab62e06248e8a598178732230431995 (16 bytes)        
 
 For reading firmware (option 2):
 
@@ -126,3 +126,6 @@ Input Tag:
 
 Sample output:
 b'Rev:2::Vin:JH4KA8250MC004002::DeviceKey:ACI{pigeon_holes_is_awesome}::Name:V.i.r.t.u.a.l.K.E.Y::User_Title:My Car::Code:'
+
+AES GCM Source code:
+https://github.com/Legrandin/pycryptodome/blob/6fb4ca4c73d7e80f336c183dd8ed906d3c4320a2/lib/Crypto/Cipher/_mode_gcm.py#L155
