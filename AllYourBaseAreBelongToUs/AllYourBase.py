@@ -7,33 +7,43 @@ import base64
 import binascii
 
 
-def testAllConversions():
-    print("Testing all conversions..")
+def testDecode():
+    print("Testing all decodes..")
     
     expected = b'helloworld'
 
     # Raw
-    temp = decodeToBinary("helloworld", "raw")
+    temp = decodeToRaw("helloworld", "raw")
     assert(type(temp) == type(b'00'))
     assert(temp == expected)
     print(f"{temp}")
 
     # b64
-    temp = decodeToBinary("aGVsbG93b3JsZA==", "b64")
+    temp = decodeToRaw("aGVsbG93b3JsZA==", "b64")
     assert(temp == expected)
     print(f"{temp}")
 
     # hex
-    temp = decodeToBinary("68656C6C6F776F726C64", "hex")
+    temp = decodeToRaw("68656C6C6F776F726C64", "hex")
     assert(temp == expected)
     print(f"{temp}")
 
     # dec
-    temp = decodeToBinary("4483247", "dec")
-    # assert(temp == expected)
+    temp = decodeToRaw("492997048111900109466724", "dec")
+    assert(temp == expected)
     print(f"{temp}")
 
-def decodeToBinary(source, format):
+    # oct
+    temp = decodeToRaw("150312661543367355734466144", "oct")    
+    assert(temp == expected)
+    print(f"{temp}")
+
+    # bin
+    temp = decodeToRaw("01101000011001010110110001101100011011110111011101101111011100100110110001100100", "bin")
+    assert(temp == expected)
+    print(f"{temp}")
+
+def decodeToRaw(source, format):
     if format == "raw":
         return source.encode()
     if format == "b64":
@@ -41,39 +51,78 @@ def decodeToBinary(source, format):
     if format == "hex":
         return binascii.unhexlify(source)
     if format == "dec":
-        temp = bytes(int(source, 10))
-        print(f"from dec: {temp}")
-        return temp
-    if format == "oct":
-        return int(source, 8)
-    if format == "bin":
-        return '0b' + source
-
-def encodeFromBinary(binary, format):
-    if format == "raw":
-        print(f"binary {binary}")
-        n = int(binary, 2)
-        n = n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
+        n = int(source)
+        n = n.to_bytes((n.bit_length() + 7) // 8, 'big')
         return n
-    if format == "b64":        
-        return base64.b64encode(binary).decode('ascii')
-    if format == "hex":
-        return hex(int(binary, 2))[2:]
-    if format == "dec":
-        return str(int(binary, 2))
     if format == "oct":
-        return oct(int(binary, 2))[2:]
+        n = int(source, 8)
+        n = n.to_bytes((n.bit_length() + 7) // 8, 'big')
+        return n
     if format == "bin":
-        return binary[2:]
+        n = int(source, 2)
+        n = n.to_bytes((n.bit_length() + 7) // 8, 'big')
+        return n
+
+def testEncode():
+    print("Testing all encodes..")
+    
+    source = b'helloworld'
+
+    # Raw
+    temp = encodeFromRaw(source, "raw")
+    assert(temp == source.decode())
+    print(f"{temp}")
+
+    # b64
+    temp = encodeFromRaw(source, "b64")
+    assert(temp == "aGVsbG93b3JsZA==")
+    print(f"{temp}")
+
+    # hex
+    temp = encodeFromRaw(source, "hex")
+    assert(temp.upper() == "68656C6C6F776F726C64")
+    print(f"{temp}")
+
+    # dec
+    temp = encodeFromRaw(source, "dec")
+    assert(temp == "492997048111900109466724")
+    print(f"{temp}")
+
+    # oct
+    temp = encodeFromRaw(source, "oct")    
+    assert(temp == "150312661543367355734466144")
+    print(f"{temp}")
+
+    # bin
+    temp = encodeFromRaw(source, "bin")
+    assert(temp == "1101000011001010110110001101100011011110111011101101111011100100110110001100100")
+    print(f"{temp}")
+
+def encodeFromRaw(raw, format):
+    if format == "raw":    
+        return raw.decode()
+    if format == "b64":        
+        return base64.b64encode(raw).decode('ascii')
+    if format == "hex":
+        temp = int.from_bytes(raw, "big")        
+        temp = hex(temp)[2:]
+        return temp
+    if format == "dec":        
+        return str(int.from_bytes(raw, "big"))
+    if format == "oct":
+        return oct(int.from_bytes(raw, "big"))[2:]
+    if format == "bin":
+        temp = bin(int.from_bytes(raw, "big"))[2:]
+        return temp
 
 def translate(source, fromType, toType):
-    temp = decodeToBinary(source, fromType)
+    temp = decodeToRaw(source, fromType)
     print(f"SOURCE: {source}")
     print(f"TEMP: {temp}")
-    return encodeFromBinary(temp, toType)
+    return encodeFromRaw(temp, toType)
 
-testAllConversions()
-exit()
+testDecode()
+testEncode()
 
 # 'argparse' is a very useful library for building python tools that are easy
 # to use from the command line.  It greatly simplifies the input validation
