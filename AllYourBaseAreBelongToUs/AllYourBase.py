@@ -4,18 +4,48 @@
 import argparse
 import socket
 import base64
+import binascii
+
+
+def testAllConversions():
+    print("Testing all conversions..")
+    
+    expected = b'helloworld'
+
+    # Raw
+    temp = decodeToBinary("helloworld", "raw")
+    assert(type(temp) == type(b'00'))
+    assert(temp == expected)
+    print(f"{temp}")
+
+    # b64
+    temp = decodeToBinary("aGVsbG93b3JsZA==", "b64")
+    assert(temp == expected)
+    print(f"{temp}")
+
+    # hex
+    temp = decodeToBinary("68656C6C6F776F726C64", "hex")
+    assert(temp == expected)
+    print(f"{temp}")
+
+    # dec
+    temp = decodeToBinary("4483247", "dec")
+    # assert(temp == expected)
+    print(f"{temp}")
 
 def decodeToBinary(source, format):
     if format == "raw":
-        return bin(int.from_bytes(source.encode(), 'big'))
+        return source.encode()
     if format == "b64":
         return base64.b64decode(source)
     if format == "hex":
-        return bin(int(source, 16))[2:].zfill(8)
+        return binascii.unhexlify(source)
     if format == "dec":
-        return bin(int(source, 10))
+        temp = bytes(int(source, 10))
+        print(f"from dec: {temp}")
+        return temp
     if format == "oct":
-        return bin(int(source, 8))
+        return int(source, 8)
     if format == "bin":
         return '0b' + source
 
@@ -36,12 +66,14 @@ def encodeFromBinary(binary, format):
     if format == "bin":
         return binary[2:]
 
-
 def translate(source, fromType, toType):
     temp = decodeToBinary(source, fromType)
     print(f"SOURCE: {source}")
     print(f"TEMP: {temp}")
     return encodeFromBinary(temp, toType)
+
+testAllConversions()
+exit()
 
 # 'argparse' is a very useful library for building python tools that are easy
 # to use from the command line.  It greatly simplifies the input validation
