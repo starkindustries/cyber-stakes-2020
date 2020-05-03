@@ -51,6 +51,7 @@ def decodeToRaw(source, format):
     if format == "hex":
         return binascii.unhexlify(source)
     if format == "dec":
+        # https://stackoverflow.com/a/7397689/2179970
         n = int(source)
         n = n.to_bytes((n.bit_length() + 7) // 8, 'big')
         return n
