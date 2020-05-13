@@ -3,7 +3,8 @@ from Cryptodome.Cipher import AES
 from Crypto.Random import get_random_bytes
 import argparse
 import timeit
-
+import zlib
+import string
 
 # 'argparse' is a very useful library for building python tools that are easy
 # to use from the command line.  It greatly simplifies the input validation
@@ -70,10 +71,49 @@ def runTimingAttackOnTag(plaintext):
             min = time
     print(f"min,max: [{min}:{max}]")
 
-if __name__ == "__main__":
-    plaintext = args.plaintext
-    testCrypto(plaintext)
-    runTimingAttackOnTag(plaintext)
+def guess(img):
+    compressed_img = zlib.compress(img.encode('utf-8'), level=9)
+    print(f"img: {img}, len: {len(compressed_img)}")    
+    # print(f"com: {compressed_img}\n")
+    return len(compressed_img)
 
-# min,max: [0.10435900185257196:2.440418000333011] for correct tag    
-# min,max: [0.10612301412038505:2.511601982405409] for wrong tag
+if __name__ == "__main__":
+    # plaintext = args.plaintext
+    # testCrypto(plaintext)
+    # runTimingAttackOnTag(plaintext)
+
+    # img = "Rev:2::Vin:45678901234567890::DeviceKey:pigeon_holes_awesome::Name:V.i.r.t.u.a.l.K.E.Y::User_Title:^:DeviceKey:this-is-the-flag::Code:car_code_123"    
+    # img = "pigeon_holes_awesome::VIRTUAL_KEY::"
+    realflag = "PiGe0n_40leS_1s_aWeS0m3"
+    realflag = "this_1s_the_flag"
+    img = "DEVICE_KEY::" + realflag + "::DATA1::" + "DEVICE_KEY::"
+    baseLen = guess(img)
+    print(f"base len: {baseLen}")
+
+    flag = ""
+    lastFlagChar = ""
+
+    charList = ":" + '_' + string.ascii_letters + string.digits
+
+    while lastFlagChar != ":":
+        lastFlagChar = None
+        for x in charList:
+            length = guess(img + flag + x)
+            if length == baseLen:
+                if x == ":":
+                    break
+                flag += x
+                lastFlagChar = x
+                break
+        if 
+
+    print(f"flag: {flag}")
+
+    # compress(img + "DEVICE_KEY::T")
+    # compress(img + "DEVICE_KEY::B")
+    # compress(img + "DEVICE_KEY::C")
+    # compress(img + "DEVICE_KEY::D")
+    # compress(img + "DEVICE_KEY::E")
+
+    # min,max: [0.10435900185257196:2.440418000333011] for correct tag    
+    # min,max: [0.10612301412038505:2.511601982405409] for wrong tag

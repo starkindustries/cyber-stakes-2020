@@ -41,6 +41,7 @@ class firmware(object):
                                            self.firmware_code)
         #sys.stderr.write(img)
         #sys.stderr.write("\n")
+        print(f"img: {img}")
         compressed_img = zlib.compress(img.encode('utf-8'), level=9)
 
         if DEBUG:
