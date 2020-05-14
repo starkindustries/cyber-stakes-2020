@@ -127,7 +127,8 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 ## InterNet Cats - Points: 4
 Use netcat: $ nc \[server] \[port]
-'''$ nc challenge.acictf.com 20120'''
+
+`$ nc challenge.acictf.com 20120`
 
 ## Out of Site - Points: 5
 Inspect page and find flag in the html source.
