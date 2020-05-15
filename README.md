@@ -13,16 +13,16 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
 | [Binary Exploitation 101](./BinaryExploitation/BinaryExploitation101) | 50 | ✔️ |
-| [Your Cup Overfloweth](./BinaryExploitation/YourCupOverfloweth/README.md) | 75 | ✔️ |
-| [Hacker, Scan Thyself](./BinaryExploitation/HackerScanThyself/README.md) | 100 | ✔️ |
-| [Serial Killer](./BinaryExploitation/SerialKiller/README.md) | 100 | ✔️ |
-| [Stack Check Fail Fail](./BinaryExploitation/StackCheckFailFail/README.md) | 150 | ✔️ |
-| [An Interesting Structure](./BinaryExploitation/AnInterestingStructure/README.md) | 250 | ✔️ |
-| [Do you C what I C](./BinaryExploitation/DoYouCWhatIC/README.md) | 250 | ✔️ |
-| [Who Does This Belong To](./BinaryExploitation/WhoDoesThisBelongTo/README.md) | 250 | ✔️ |
-| [Party ROPin in the House](./BinaryExploitation/PartyROPinInTheHouse/README.md) | 300 | ✔️|
-| [Speed Racer](./BinaryExploitation/SpeedRacer/README.md) | 450 | ✔️ |
-| [Look At The Totem](./BinaryExploitation/LookAtTheTotem/README.md) | 500 | ✔️ |
+| [Your Cup Overfloweth](./BinaryExploitation/YourCupOverfloweth) | 75 |  |
+| [Hacker, Scan Thyself](./BinaryExploitation/HackerScanThyself) | 100 |  |
+| [Serial Killer](./BinaryExploitation/SerialKiller) | 100 | ✔️ |
+| [Stack Check Fail Fail](./BinaryExploitation/StackCheckFailFail) | 150 | ✔️ |
+| [An Interesting Structure](./BinaryExploitation/AnInterestingStructure) | 250 | ✔️ |
+| [Do you C what I C](./BinaryExploitation/DoYouCWhatIC) | 250 | ✔️ |
+| [Who Does This Belong To](./BinaryExploitation/WhoDoesThisBelongTo) | 250 | ✔️ |
+| [Party ROPin in the House](./BinaryExploitation/PartyROPinInTheHouse) | 300 | ✔️|
+| [Speed Racer](./BinaryExploitation/SpeedRacer) | 450 | ✔️ |
+| [Look At The Totem](./BinaryExploitation/LookAtTheTotem) | 500 | ✔️ |
 
 ## Cryptography
 
@@ -32,13 +32,13 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [Rotate Me](./Cryptography/RotateMe/README.md) | 5 | ✔️ |
-| [Really Senseless Admins](./Cryptography/ReallySenselessAdmins/README.md) | 35 | ✔️ |
-| [Over Time: Paid](./Cryptography/OverTimePaid/README.md) | 50 | ✔️ |
-| [Speak Plainly](./Cryptography/SpeakPlainly/README.md) | 150 | ✔️ |
-| [Headpiece Silver](./Cryptography/HeadpieceSilver/README.md) | 200 | |
-| [We're Related](./Cryptography/WereRelated/README.md) | 250 | ✔️ |
-| [Pigeon Holes](./Cryptography/PigeonHoles/README.md) | 350 | ✔️ |
+| [Rotate Me](./Cryptography/RotateMe) | 5 | ✔️ |
+| [Really Senseless Admins](./Cryptography/ReallySenselessAdmins) | 35 | ✔️ |
+| [Over Time: Paid](./Cryptography/OverTimePaid) | 50 | ✔️ |
+| [Speak Plainly](./Cryptography/SpeakPlainly) | 150 | ✔️ |
+| [Headpiece Silver](./Cryptography/HeadpieceSilver) | 200 | |
+| [We're Related](./Cryptography/WereRelated) | 250 | ✔️ |
+| [Pigeon Holes](./Cryptography/PigeonHoles) | 350 | ✔️ |
 
 ## Forensics
 
@@ -48,19 +48,19 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [Filing Extension](./Forensics/FilingExtension/README.md) | 10 | ✔️ |
-| [Bootcamp](./Forensics/Bootcamp/README.md) | 20 | ✔️ |
-| [Controlled Access](./Forensics/ControlledAccess/README.md) | 50 | ✔️ |
-| [Not So Meta](./Forensics/NotSoMeta/README.md) | 50 | ✔️ |
-| [Boot Master](./Forensics/BootMaster/README.md) | 75 | ✔️ |
-| [Boot Riddle](./Forensics/BootRiddle/README.md) | 100 | ✔️ |
-| [That's More Than Enough](./Forensics/ThatsMoreThanEnough/README.md) | 100 | ✔️ |
-| [Turtles All the Way Down](./Forensics/TurtlesAllTheWayDown/README.md) | 100 | ✔️ |
-| [Boot Racer](./Forensics/BootRacer/README.md) | 150 | ✔️ |
-| [Sharing is Caring](./Forensics/SharingIsCaring/README.md) | 250 | ✔️ |
-| [Drill to the Center](./Forensics/DrillToTheCenter/README.md) | 300 | ✔️ |
-| [Needle in the Haystack](./Forensics/NeedleInTheHaystack/README.md) | 300 | |
-| [Kids on the Block](./Forensics/KidsOnTheBlock/README.md) | 400 | ✔️ |
+| [Filing Extension](./Forensics/FilingExtension) | 10 | ✔️ |
+| [Bootcamp](./Forensics/Bootcamp) | 20 | ✔️ |
+| [Controlled Access](./Forensics/ControlledAccess) | 50 | ✔️ |
+| [Not So Meta](./Forensics/NotSoMeta) | 50 | ✔️ |
+| [Boot Master](./Forensics/BootMaster) | 75 | ✔️ |
+| [Boot Riddle](./Forensics/BootRiddle) | 100 | ✔️ |
+| [That's More Than Enough](./Forensics/ThatsMoreThanEnough) | 100 | ✔️ |
+| [Turtles All the Way Down](./Forensics/TurtlesAllTheWayDown) | 100 | ✔️ |
+| [Boot Racer](./Forensics/BootRacer) | 150 | ✔️ |
+| [Sharing is Caring](./Forensics/SharingIsCaring) | 250 | ✔️ |
+| [Drill to the Center](./Forensics/DrillToTheCenter) | 300 | ✔️ |
+| [Needle in the Haystack](./Forensics/NeedleInTheHaystack) | 300 | |
+| [Kids on the Block](./Forensics/KidsOnTheBlock) | 400 | ✔️ |
 
 ## Miscellaneous
 
@@ -70,16 +70,16 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [All Your Base Are Belong to Us](./Miscellaneous/AllYourBase/README.md) | 50 | ✔️ |
-| [Move ZIG](./Miscellaneous/MoveZIG/README.md) | 75 | ✔️ |
-| [Proxy List](./Miscellaneous/ProxyList/README.md) | 100 | ✔️ |
-| [Can You Look This Over?](./Miscellaneous/CanYouLookThisOver/README.md) | 150 | ✔️ |
-| [Recovery And IDentification](./Miscellaneous/RecoveryAndIDentification/README.md) | 150 | ✔️ |
-| [I SEe You](./Miscellaneous/ISEeYou/README.md) | 200 | ✔️ |
-| [Partition Twice, Recover Once](./Miscellaneous/PartitionTwiceRecoverOnce/README.md) | 250 | ✔️ |
-| [PassThis](./Miscellaneous/PassThis/README.md) | 250 | ➖ |
-| [Assembly Voyageur](./Miscellaneous/AssemblyVoyageur/README.md) | 300 | ✔️ |
-| [UNO Reverse Card](./Miscellaneous/UNOReverseCard/README.md) | 300 | ✔️ |
+| [All Your Base Are Belong to Us](./Miscellaneous/AllYourBase) | 50 | ✔️ |
+| [Move ZIG](./Miscellaneous/MoveZIG) | 75 | ✔️ |
+| [Proxy List](./Miscellaneous/ProxyList) | 100 | ✔️ |
+| [Can You Look This Over?](./Miscellaneous/CanYouLookThisOver) | 150 | ✔️ |
+| [Recovery And IDentification](./Miscellaneous/RecoveryAndIDentification) | 150 | ✔️ |
+| [I SEe You](./Miscellaneous/ISEeYou) | 200 | ✔️ |
+| [Partition Twice, Recover Once](./Miscellaneous/PartitionTwiceRecoverOnce) | 250 | ✔️ |
+| [PassThis](./Miscellaneous/PassThis) | 250 | ➖ |
+| [Assembly Voyageur](./Miscellaneous/AssemblyVoyageur) | 300 | ✔️ |
+| [UNO Reverse Card](./Miscellaneous/UNOReverseCard) | 300 | ✔️ |
 
 ## Reverse Engineering
 
@@ -89,17 +89,17 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [Reverse Engineering 101](./ReverseEngineering/ReverseEngineering101/README.md) | 25 | ✔️ |
-| [Lockbox](./ReverseEngineering/Lockbox/README.md) | 50 | ✔️ |
-| [National Dex #65](./ReverseEngineering/NationalDex65/README.md) | 100 | ✔️ |
-| [Read it and Weep](./ReverseEngineering/ReadItAndWeep/README.md) | 100 | ✔️ |
-| [What's the Difference?](./ReverseEngineering/WhatsTheDifference/README.md) | 100 | ✔️ |
-| [Library Card](./ReverseEngineering/LibraryCard/README.md) | 150 | ✔️ |
-| [Say What?](./ReverseEngineering/SayWhat/README.md) | 200 | ✔️ |
-| [C&C Music Factory](./ReverseEngineering/CandCMusicFactory/README.md) | 300 | ✔️ |
-| [CLRly just a crack-me](./ReverseEngineering/CLRlyJustACrackMe/README.md) | 300 | |
-| [Are You Maching Me](./ReverseEngineering/AreYouMachingMe/README.md) | 350 | |
-| [Into the Metaverse](./ReverseEngineering/IntoTheMetaverse/README.md) | 450 | ✔️ |
+| [Reverse Engineering 101](./ReverseEngineering/ReverseEngineering101) | 25 | ✔️ |
+| [Lockbox](./ReverseEngineering/Lockbox) | 50 | ✔️ |
+| [National Dex #65](./ReverseEngineering/NationalDex65) | 100 | ✔️ |
+| [Read it and Weep](./ReverseEngineering/ReadItAndWeep) | 100 | ✔️ |
+| [What's the Difference?](./ReverseEngineering/WhatsTheDifference) | 100 | ✔️ |
+| [Library Card](./ReverseEngineering/LibraryCard) | 150 | ✔️ |
+| [Say What?](./ReverseEngineering/SayWhat) | 200 | ✔️ |
+| [C&C Music Factory](./ReverseEngineering/CandCMusicFactory) | 300 | ✔️ |
+| [CLRly just a crack-me](./ReverseEngineering/CLRlyJustACrackMe) | 300 | |
+| [Are You Maching Me](./ReverseEngineering/AreYouMachingMe) | 350 | |
+| [Into the Metaverse](./ReverseEngineering/IntoTheMetaverse) | 450 | ✔️ |
 
 ## Web Security]
 
@@ -109,19 +109,19 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [Out of Site](./WebSecurity/OutOfSite/README.md) | 5 | ✔️ |
-| [More Out of Site](./WebSecurity/MoreOutOfSite/README.md) | 10 | ✔️ |
-| [Most Out of Site](./WebSecurity/MostOutOfSite/README.md) | 20 | ✔️ |
-| [Let me INNNNNN](./WebSecurity/LetMeInnnnnn/README.md) | 40 | ✔️ |
-| [No Escape](./WebSecurity/NoEscape/README.md) | 60 | ✔️ |
-| [DENIED](./WebSecurity/DENIED/README.md) | 75 | ✔️ |
-| [Blame it on the Temp](./WebSecurity/BlameItOnTheTemp/README.md) | 150 | ✔️|
-| [The SQL Always Sucks](./WebSecurity/TheSQLAlwaysSucks/README.md) | 150 | ✔️ |
-| [Cookie Monster](./WebSecurity/CookieMonster/README.md) | 200 | ✔️ |
-| [I Have Caught You Now](./WebSecurity/IHaveCaughtYouNow/README.md) | 250 | ✔️ |
-| [Extremely Malicious Language](./WebSecurity/ExtremelyMaliciousLanguage/README.md) | 300 | ✔️ |
-| [Who Is That In That Mirror](./WebSecurity/WhoIsThatInThatMirror/README.md) | 300 | ✔️ |
-| [FirstFail](./WebSecurity/FirstFail/README.md) | 400 | ✔️ |
+| [Out of Site](./WebSecurity/OutOfSite) | 5 | ✔️ |
+| [More Out of Site](./WebSecurity/MoreOutOfSite) | 10 | ✔️ |
+| [Most Out of Site](./WebSecurity/MostOutOfSite) | 20 | ✔️ |
+| [Let me INNNNNN](./WebSecurity/LetMeInnnnnn) | 40 | ✔️ |
+| [No Escape](./WebSecurity/NoEscape) | 60 | ✔️ |
+| [DENIED](./WebSecurity/DENIED) | 75 | ✔️ |
+| [Blame it on the Temp](./WebSecurity/BlameItOnTheTemp) | 150 | ✔️|
+| [The SQL Always Sucks](./WebSecurity/TheSQLAlwaysSucks) | 150 | ✔️ |
+| [Cookie Monster](./WebSecurity/CookieMonster) | 200 | ✔️ |
+| [I Have Caught You Now](./WebSecurity/IHaveCaughtYouNow) | 250 | ✔️ |
+| [Extremely Malicious Language](./WebSecurity/ExtremelyMaliciousLanguage) | 300 | ✔️ |
+| [Who Is That In That Mirror](./WebSecurity/WhoIsThatInThatMirror) | 300 | ✔️ |
+| [FirstFail](./WebSecurity/FirstFail) | 400 | ✔️ |
 
 # Cyber Stakes 2020
 
