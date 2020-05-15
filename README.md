@@ -12,7 +12,7 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 
 | Challenge Name               | Points  | Write-up |
 | -----------------------------|:-------:|:--------:|
-| [Binary Exploitation 101](./BinaryExploitation/BinaryExploitation101/README.md) | 50 | ✔️ |
+| [Binary Exploitation 101](./BinaryExploitation/BinaryExploitation101) | 50 | ✔️ |
 | [Your Cup Overfloweth](./BinaryExploitation/YourCupOverfloweth/README.md) | 75 | ✔️ |
 | [Hacker, Scan Thyself](./BinaryExploitation/HackerScanThyself/README.md) | 100 | ✔️ |
 | [Serial Killer](./BinaryExploitation/SerialKiller/README.md) | 100 | ✔️ |
