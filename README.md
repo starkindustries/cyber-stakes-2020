@@ -121,10 +121,7 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 | [Who Is That In That Mirror](./WebSecurity/WhoIsThatInThatMirror) | 300 | ✔️ |
 | [FirstFail](./WebSecurity/FirstFail) | 400 | ✔️ |
 
-# =====================================================
-
-## Out of Site - Points: 5
-Inspect page and find flag in the html source.
+# =============================================
 
 ## Filing Extension - Points: 10
 We went to apply for a tax-filing extension with the IRS, and they replied with this image saying it contained the code we needed. Unfortunately, our computer refuses to display it and just says that it isn't a PNG... flag.png
