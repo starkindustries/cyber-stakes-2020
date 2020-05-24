@@ -1,8 +1,6 @@
 # CyberStakes 2020
 
-Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4).
-
-# Challenges by Category
+Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 
 ## Binary Exploitation
 
@@ -123,18 +121,10 @@ Write-ups and walkthroughs for the challenges in All-Army CyberStakes 4 (AACS 4)
 | [Who Is That In That Mirror](./WebSecurity/WhoIsThatInThatMirror) | 300 | ✔️ |
 | [FirstFail](./WebSecurity/FirstFail) | 400 | ✔️ |
 
-# Cyber Stakes 2020
-
-## InterNet Cats - Points: 4
-Use netcat: $ nc \[server] \[port]
-
-`$ nc challenge.acictf.com 20120`
+# =====================================================
 
 ## Out of Site - Points: 5
 Inspect page and find flag in the html source.
-
-## Rotate Me - Points: 5 
-Caesar Cipher
 
 ## Filing Extension - Points: 10
 We went to apply for a tax-filing extension with the IRS, and they replied with this image saying it contained the code we needed. Unfortunately, our computer refuses to display it and just says that it isn't a PNG... flag.png
