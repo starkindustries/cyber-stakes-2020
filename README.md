@@ -123,22 +123,6 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 
 # =============================================
 
-## Bootcamp - Points: 20
-We found an old floppy-drive laying around and think that there may be a flag hidden on it somewhere. We managed to copy the drive image, but there doesn't appear to be any kind of filesystem on it. In fact, all of the data appears to be on the first sector of the disk.
-
-It looks like file floppy.img identifies it as a "DOS/MBR Boot Record"...
-What happens if you try booting the image?
-You probably don't have a real floppy drive that you can use, but what about a 'virtual' one?
-qemu-system-i386 floppy.img is our favorite means of 'booting' floppies, but 'Virtual Box' and 'bochs' are other alternatives (and they are all free).
-
-$ file files.tar.gz
-files.tar.gz: gzip compressed data, last modified: Fri Apr 24 00:44:24 2020, from Unix
-$ tar -xzvf files.tar.gz
-floppy.img
-$ file floppy.img
-floppy.img: DOS/MBR boot sector
-$ qemu-system-i386 floppy.img
-
 ## Reverse Engineering 101 - Points: 25
 Reverse engineering can definitely be intimidating so we have a simple program with which you can start. If you don't know where to start, check out the hints where we'll walk you through two different ways to solve this problem.
 
