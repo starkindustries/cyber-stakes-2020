@@ -119,6 +119,7 @@ Note that the asterisks '*' found are just padding for the cipher block. One of 
 * [Speak Plainly by John Hammond](https://youtu.be/f-iz_ZAS258)
 * [Speak Plainly by welchbj](https://github.com/welchbj/ctf/tree/master/writeups/2020/CyberStakes/speak-plainly)
 * [Block Cipher Mode (Wikipedia)][1]
+* [Chosen Plaintext Attack on AES in ECB Mode][2]
 
 [1]: https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)
 [2]: https://crypto.stackexchange.com/questions/42891/chosen-plaintext-attack-on-aes-in-ecb-mode
