@@ -123,17 +123,6 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 
 # =============================================
 
-## Filing Extension - Points: 10
-We went to apply for a tax-filing extension with the IRS, and they replied with this image saying it contained the code we needed. Unfortunately, our computer refuses to display it and just says that it isn't a PNG... flag.png
-
-First, figure out what type of file the flag is.
-
-$ file flag.png
-flag.png: Zip archive data, at least v2.0 to extract
-$ unzip flag.png
-Archive:  flag.png
-  inflating: flag.txt  
-
 ## Bootcamp - Points: 20
 We found an old floppy-drive laying around and think that there may be a flag hidden on it somewhere. We managed to copy the drive image, but there doesn't appear to be any kind of filesystem on it. In fact, all of the data appears to be on the first sector of the disk.
 
