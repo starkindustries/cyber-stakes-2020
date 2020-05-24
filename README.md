@@ -134,12 +134,6 @@ $ unzip flag.png
 Archive:  flag.png
   inflating: flag.txt  
 
-
-## More Out of Site - Points: 10
-Well that was embarrassing... Who knew there was more to a web site then what the browser showed? Not to worry, we're back with a new and improved Javascript version! http://challenge.acictf.com:19888
-
-Inspect the page. Check the javascript source file for the flag.
-
 ## Bootcamp - Points: 20
 We found an old floppy-drive laying around and think that there may be a flag hidden on it somewhere. We managed to copy the drive image, but there doesn't appear to be any kind of filesystem on it. In fact, all of the data appears to be on the first sector of the disk.
 
