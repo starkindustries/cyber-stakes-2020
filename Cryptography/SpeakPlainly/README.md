@@ -62,45 +62,42 @@ Playing around with the input confirms this. Sending different passwords does no
 
 Experimenting further, sending a username with 15 characters returns a cookie with 32 bytes (64 hex characters). And sending a username with 16 characters returns a cookie with 48 bytes (96 hex characters). That means that the 16th character causes the cipher to spill over to a new block, which means that a 15 character username plus auth token fits into a 32 byte cipher.
 
-Take the following hypothetical example:
+Try a username of `AAAAAAAAAAAAAAA`:
 ```
-            0123456789ABCDEF  (this just helps count the characters)
   username: AAAAAAAAAAAAAAA   (15 bytes)
-auth_token: BCDEFGHIJKLMNOPQR (17 bytes)
+auth_token: THIS_IS_STR_TOKEN (17 bytes of unknown characters)
 ```
-These sample inputs combine to create the plaintext:
+These inputs combine to create this plaintext: 
+```            
+plaintext1: AAAAAAAAAAAAAAAT HIS_IS_STR_TOKEN (username + auth_token)
+                           ^
+                           this 'T' is the 16th character
 ```
-            0123456789ABCDEF 0123456789ABCDEF (counter helper)            
-plaintext1: AAAAAAAAAAAAAAAB CDEFGHIJKLMNOPQR (username + auth_token)
-```
+Note the character at the 16th position is also the start of the `auth_token`.
 
 This plaintext encrypts to:
 ```
-cipher1: 479ee841e07e0bc545ea4d54ccc35f09 (cipher text block 0)
-         bce429f842aae6fed359f574311f542c
+cipher1: a46ebd63b5e0c0c7a3f256a53a0823d2 (cipher text block 0)
+         27dfd0ccf3e4868778354ee7c7b2ef49 (cipher text block 1)
 ```
 
-If the username is then changed to `AAAAAAAAAAAAAAAB` (16 bytes) then the username plus auth token combine to:
+Now change the username to `AAAAAAAAAAAAAAAB` (16 bytes). The username plus auth token combine to:
 ```
-            0123456789ABCDEF 0123456789ABCDEF (counter helper)
 plaintext2: AAAAAAAAAAAAAAAB BCDEFGHIJKLMNOPQ 
 ```
 And this encrypts to:
 ```
 cipher2: 479ee841e07e0bc545ea4d54ccc35f09 (cipher text block 0)
-         6597fd2b7378edd3f7ce7e9a90acff56 
+         6597fd2b7378edd3f7ce7e9a90acff56 (cipher text block 1)
 ```
 
-Notice that the first 16 bytes in plaintext1 and plaintext2 are both equal to "AAAAAAAAAAAAAAAB".
-As a result, both block0's of ciphertext1 and ciphertext2 are identical.
+Notice that the first 16 bytes in plaintext1 and plaintext2 are both equal to `AAAAAAAAAAAAAAAB`. As a result, both block ciphertext1 block 0 and ciphertext2 block 0 are identical.
 
 Plugin the found secret token into the website and get the flag.
 
 ### References
 * [Speak Plainly by John Hammond](https://youtu.be/f-iz_ZAS258)
 * [Speak Plainly by welchbj](https://github.com/welchbj/ctf/tree/master/writeups/2020/CyberStakes/speak-plainly)
-* [Block Cipher Mode (Wikipedia)][1]
-* [Chosen Plaintext attack on AES in ECB mode][2]
-
+* [Block Cipher Mode (Wikipedia)][1]===================================================
 [1]: https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)
 [2]: https://crypto.stackexchange.com/questions/42891/chosen-plaintext-attack-on-aes-in-ecb-mode
