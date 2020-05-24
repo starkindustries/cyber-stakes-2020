@@ -150,15 +150,6 @@ $ file floppy.img
 floppy.img: DOS/MBR boot sector
 $ qemu-system-i386 floppy.img
 
-## Most Out of Site - Points: 20
-Alright, one more try. We had to think long and hard about how to keep you from viewing the flag. After a quick snack break, we had an epiphany. Your tricks won't work this time. http://challenge.acictf.com:54227
-
-What on earth could snack food have to do with this problem?
-The browser must be storing these cookies somewhere...
-If you're getting tired of using a browser, the Python Requests library is pretty useful for interacting with web servers.
-
-In Chrome, right click and inspect page. Click the Application tab. Under Storage, click Cookies. One of the cookies contains the flag.
-
 ## Reverse Engineering 101 - Points: 25
 Reverse engineering can definitely be intimidating so we have a simple program with which you can start. If you don't know where to start, check out the hints where we'll walk you through two different ways to solve this problem.
 
