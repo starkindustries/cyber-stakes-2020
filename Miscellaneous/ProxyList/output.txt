@@ -1,0 +1,31 @@
+IP: 128.101.101.101
+ISO Code: US
+Country: United States
+Error The address 91.229.212.31 is not in the database.
+Error The address 89.107.11.106 is not in the database.
+Error The address 160.187.12.48 is not in the database.
+Error The address 103.29.8.73 is not in the database.
+Error The address 190.11.223.249 is not in the database.
+Error The address 179.42.125.62 is not in the database.
+Error The address 131.255.1.34 is not in the database.
+Error The address 103.21.220.136 is not in the database.
+Error The address 79.110.228.65 is not in the database.
+Error The address 37.140.252.102 is not in the database.
+Error The address 195.85.195.87 is not in the database.
+Error The address 103.247.31.245 is not in the database.
+Error The address 27.124.71.32 is not in the database.
+Error The address 190.11.222.29 is not in the database.
+Error The address 109.205.60.236 is not in the database.
+Error The address 201.131.144.124 is not in the database.
+Error The address 110.172.30.87 is not in the database.
+Error The address 103.226.25.9 is not in the database.
+Error The address 195.3.161.0 is not in the database.
+Error The address 131.255.3.172 is not in the database.
+Error The address 103.238.113.150 is not in the database.
+Error The address 200.35.147.174 is not in the database.
+
+Countries:
+[('Brazil', 2400), ('Russia', 1259), ('India', 1037), ('Taiwan', 972), ('United States', 913), ('Spain', 898), ('Mexico', 814), ('Sweden', 757), ('South Africa', 742), ('Germany', 601), ('Switzerland', 586), ('Poland', 569), ('France', 567), ('Japan', 553), ('Argentina', 515), ('Colombia', 506), ('Indonesia', 492), ('Turkey', 479), ('Norway', 477), ('South Korea', 458), ('United Kingdom', 438), ('Italy', 418), ('Vietnam', 417), ('Egypt', 412), ('Australia', 399), ('Finland', 393), ('Denmark', 390), ('Netherlands', 350), ('Hong Kong', 339), ('Iran', 334), ('Canada', 334), ('Ukraine', 311), ('Belgium', 306), ('Austria', 288), ('Chile', 287), ('Czechia', 243), ('Ireland', 240), ('Thailand', 239), ('Saudi Arabia', 235), ('Israel', 230), ('New Zealand', 223), ('Romania', 218), ('China', 215), ('Singapore', 202), ('Venezuela', 185), ('Malaysia', 184), ('Hungary', 175), ('Morocco', 165), ('Portugal', 163), ('Philippines', 159), ('Pakistan', 158), ('Greece', 155), ('Bulgaria', 130), ('Tunisia', 118), ('Algeria', 109), ('Croatia', 95), ('Kenya', 93), ('United Arab Emirates', 90), ('Kazakhstan', 87), ('Peru', 84), ('Republic of Lithuania', 79), ('Ecuador', 79), ('Slovenia', 77), ('Uruguay', 72), ('Slovakia', 71), ('Costa Rica', 70), ('Serbia', 63), ('Nigeria', 57), ('Dominican Republic', 54), ('Belarus', 53), ('Kuwait', 52), ('Panama', 46), ('Luxembourg', 43), ('Latvia', 41), ('Republic of Moldova', 41), ('Estonia', 40), ('Bolivia', 38), ('Tanzania', 36), ('Georgia', 33), ('Sudan', 31), ('Mauritius', 30), ('Bosnia and Herzegovina', 28), ('Paraguay', 28), ('Oman', 27), ('North Macedonia', 26), ('Seychelles', 26), ('Iceland', 24), ('Angola', 23), ('Qatar', 23), ('Bangladesh', 22), ('El Salvador', 22), ('Zambia', 22), ('Puerto Rico', 21), ('Palestine', 19), ('Sri Lanka', 19), ('Trinidad and Tobago', 19), ('Azerbaijan', 19), ('Cyprus', 18), ('Syria', 18), ('Bahrain', 17), (None, 16), ('Armenia', 16), ('Hashemite Kingdom of Jordan', 16), ('Lebanon', 16), ('Cuba', 16), ('Honduras', 15), ('Nepal', 15), ('Malta', 14), ('Ghana', 11), ('Iraq', 11), ('Mozambique', 11), ('Uganda', 11), ('Cambodia', 11), ('Kyrgyzstan', 11), ('Gabon', 10), ('Macao', 10), ('Guatemala', 9), ('Rwanda', 9), ('Haiti', 9), ('Namibia', 9), ('Montenegro', 8), ('Jamaica', 8), ('New Caledonia', 8), ('Ivory Coast', 8), ('Réunion', 7), ('Albania', 7), ('Fiji', 6), ('Libya', 6), ('Barbados', 6), ('Uzbekistan', 5), ('Nicaragua', 5), ('DR Congo', 5), ('Ethiopia', 5), ('Guadeloupe', 5), ('Congo Republic', 5), ('Zimbabwe', 5), ('Belize', 4), ('Liberia', 4), ('Curaçao', 4), ('Myanmar', 4), ('Mongolia', 4), ('Faroe Islands', 4), ('Cayman Islands', 4), ('Yemen', 4), ('Andorra', 4), ('Bahamas', 4), ('U.S. Virgin Islands', 3), ('Samoa', 3), ('Aruba', 3), ('Cameroon', 3), ('Senegal', 3), ('Jersey', 3), ('Botswana', 3), ('Brunei', 3), ('Monaco', 3), ('Madagascar', 3), ('Guyana', 3), ('Mali', 3), ('Liechtenstein', 3), ('Burkina Faso', 2), ('Suriname', 2), ('Bonaire, Sint Eustatius, and Saba', 2), ('Guam', 2), ('Malawi', 2), ('Isle of Man', 2), ('British Virgin Islands', 2), ('Antigua and Barbuda', 2), ('Papua New Guinea', 2), ('Tajikistan', 2), ('Bermuda', 2), ('French Polynesia', 2), ('Martinique', 2), ('Djibouti', 2), ('Cook Islands', 1), ('Northern Mariana Islands', 1), ('Kosovo', 1), ('São Tomé and Príncipe', 1), ('Comoros', 1), ('Maldives', 1), ('Cabo Verde', 1), ('Eswatini', 1), ('Laos', 1), ('French Guiana', 1), ('Wallis and Futuna', 1), ('Turks and Caicos Islands', 1), ('American Samoa', 1), ('San Marino', 1), ('Afghanistan', 1), ('Somalia', 1), ('Norfolk Island', 1), ('Vatican City', 1), ('East Timor', 1), ('Mauritania', 1), ('Guinea', 1), ('Lesotho', 1), ('Benin', 1), ('Gibraltar', 1), ('Bhutan', 1), ('Saint Lucia', 1)]
+
+Most frequent country: ('Brazil', 2400)
+Flag: ACI{Brazil}

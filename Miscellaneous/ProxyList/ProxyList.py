@@ -18,7 +18,7 @@ print(f"ISO Code: {response.country.iso_code}")
 print(f"Country: {response.country.name}")
 
 countryCount = {}
-with open('ProxyList.txt') as file:
+with open('ips.txt') as file:
     for line in file:
         ip = line.strip()
         
@@ -32,9 +32,10 @@ with open('ProxyList.txt') as file:
             countryCount[country] = 1
         else:
             countryCount[country] += 1
-
-sortedCountries = {key: value for key, value in sorted(countryCount.items(), key=lambda item: item[1])}
-for key, value in sortedCountries.items():
-    print(f"{key}: {value}")
-
 reader.close()
+
+print("\nCountries:")
+sortedCountries = sorted(countryCount.items(), key=lambda item: item[1], reverse=True)
+print(sortedCountries)
+print(f"\nMost frequent country: {sortedCountries[0]}")
+print(f"Flag: ACI{{{sortedCountries[0][0]}}}")
