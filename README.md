@@ -123,44 +123,6 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 
 # =============================================
 
-## DENIED - Points: 75
-### Prompt
-Sometimes websites are afraid of the terminator finding things out. http://challenge.acictf.com:12133 The flag is in flag.txt.
-
-### Hints
-How can websites keep search engines from finding private information?
-Sometimes the developers leave some comments that give you a hint about what to do...
-You can use the cat command to read files
-
-### Notes
-The website hints at robots. Check the /robots.txt page to see whats there. Robots.txt contains:
-'''
-User-agent: *
-Allow: /index.html
-Allow: /products.html
-Disallow: /maintenance_foo_bar_deadbeef_12345.html
-'''
-
-Maintenance seems interesting. Visiting this page you get a page that says: "Result: Run a command!" Inspecting the page and looking at the source shows a commented section:
-<!--
-    Disabled for being insecure... oops!
-<form action="/secret_maintenance_foo_543212345", method="POST">
-    <input name="cmd"/>
-</form>-->
-
-Uncommenting this section reveals an input box that you can type a command in. 'pwd', 'ls', and 'cat' are all valid commands for this input.
-
-Using python requests library, we can post commands to /secret_maintenance_foo to experiment. The 'ls' command produces:
-'''
-flag.txt
-robots.txt
-server.py
-static
-templates
-xinet_startup.sh
-'''
-Then 'cat flag.txt' produces the flag.
-
 ## Not So Meta - Points: 50
 ### Prompt
 Look, it's the flag! Oh wait...it looks like we need to take a closer look... not_so_meta.jpg
