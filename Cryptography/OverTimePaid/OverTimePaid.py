@@ -61,7 +61,7 @@ def generate_doc(flag):
     return out
 
 if DEBUG:
-    flag = "redacted"
+    flag = "THIS_IS_A_SAMPLE_FLAG"
     print(f"flag: {flag}\n")
     doc = generate_doc(flag)
     print(f"doc: {doc}")
@@ -91,11 +91,12 @@ with open("./document.encrypted", ) as file:
     lines = "".join(line.strip() for line in file)
 print(lines + "\n")
 
-# Unhexlify
+# UnhexlifyFalse
 unhex = binascii.unhexlify(lines)
 print(f"unhex: {unhex}")
 if DEBUG:
-    assert(unhex == enc, "Error: 'unhex' and 'enc' vars do NOT match.")
+    if(unhex != enc):
+        print("Error: 'unhex' and 'enc' vars do NOT match.")
 
 # decrypt_otp
 if DEBUG:
@@ -104,7 +105,8 @@ if DEBUG:
 
 # get the actual otp
 key = "The following encoded individuals are to be given a $27.3k bonus"
-assert(len(key) == 64, f"Error: expected key length 64. Received: {len(key)}")
+if len(key) != 64:
+    print(f"Error: expected key length 64. Received: {len(key)}")
 
 key = key.encode('utf-8')
 print(f"{key}, {type(key)}")
@@ -113,7 +115,8 @@ otp2 = encrypt_otp(unhex[0:64], key)
 print(f"OTP: {otp2}")
 
 if DEBUG:
-    assert(otp == otp2, f"Error: OTPs do NOT match.\n OTP1: {otp} \n OTP2: {otp}")
+    if(otp != otp2): 
+        print(f"Error: OTPs do NOT match.\n OTP1: {otp} \n OTP2: {otp}")
 
 # Decrypt the message
 data = encrypt_otp(unhex, otp2)

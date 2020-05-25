@@ -123,48 +123,6 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 
 # =============================================
 
-
-## Let me INNNNNN - Points: 40
-Prompt
-Let's see if you can break into our secure vault.
-
-Hints
-How is the email determined for the password resending?
-
-Notes:
-Go to the Login page and inspect the login form. You'll see there is a hidden input with id="email" and value="vault.master@cyberstakes.com". Change this email to your email and click "Resent password". Check your email for the password. Enter the password and get the flag.
-
-## Over Time: Paid - Points: 50 
-
-### Prompt
-After many months of hard work by our agents, we've gained access to a sensitive payroll document from a competitor. Unfortunately, it looks heavily encrypted. document.encrypted source.py
-
-### Hints
-Isn't it strange how each line of text in their document is of an identical length?
-Key Management is a difficult problem on the battlefield; maybe they reused key material in this document?
-Previous documents we've recovered had lines of encrypted whitespace as a result of text-formatting in the plaintext... Maybe that applies to this document too?
-
-### Notes
-Reviewing the source code shows that the OTP is just a 64 byte string. The encoding algorithm XORs each byte with a corresponding byte in the OTP and loops for the entire length of the string to encrypt. To reverse this, just run it through the same XOR function; don't need to create a decryption function.
-
-The next step is to find the OTP used in the original encrypted file. We just need a known string to XOR with the encrypted data to produce the OTP. This is similar to The Imitation Game where the code breakers use a known phrase to decrypt the key. In this case, we can see that "The following encoded individuals are to be given a $27.3k bonus" is standard text used in every encrypted message. It also contains 64 characters, conveniently matching the key length. We can use this to produce the key.
-
-The full decryption code is in OverTimePaid.py. 
-
-Quick note about python byte encoding. If a byte is within the ascii range, python prints it out like normal. If it is not, python prints it in the format \x00, where 00 is the two hex digits that represent the byte. Take the following byte string:
-b')\x88m\xa3\xa92x\x18c\xca\xdb\xd0Y\x9d\xa2q' 
-The first 10 bytes are: 
-1) open parenthesis ')'. 
-2) \x88 
-3) m
-4) \xA3
-5) \xA9
-6) 2
-7) x
-8) \x18
-9) x
-10) \xCA
-
 ## DENIED - Points: 75
 ### Prompt
 Sometimes websites are afraid of the terminator finding things out. http://challenge.acictf.com:12133 The flag is in flag.txt.
