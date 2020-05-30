@@ -79,7 +79,7 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 | [Are You Maching Me](./ReverseEngineering/AreYouMachingMe) | 350 |
 | [Into the Metaverse](./ReverseEngineering/IntoTheMetaverse) | 450 |
 
-## Web Security]
+## Web Security
 
 | Challenge Name               | Points  |
 | -----------------------------|:-------:|
