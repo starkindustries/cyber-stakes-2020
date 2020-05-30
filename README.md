@@ -88,14 +88,14 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 | [Most Out of Site](./WebSecurity/MostOutOfSite) | 20 |
 | [Let me INNNNNN](./WebSecurity/LetMeInnnnnn) | 40 |
 | [No Escape](./WebSecurity/NoEscape) | 60 |
-| [DENIED](./WebSecurity/DENIED) | 75 |
-| [Blame it on the Temp](./WebSecurity/BlameItOnTheTemp) | 150 |
-| [The SQL Always Sucks](./WebSecurity/TheSQLAlwaysSucks) | 150 |
-| [Cookie Monster](./WebSecurity/CookieMonster) | 200 |
-| [I Have Caught You Now](./WebSecurity/IHaveCaughtYouNow) | 250 |
-| [Extremely Malicious Language](./WebSecurity/ExtremelyMaliciousLanguage) | 300 |
-| [Who Is That In That Mirror](./WebSecurity/WhoIsThatInThatMirror) | 300 |
-| [FirstFail](./WebSecurity/FirstFail) | 400 |
+| [DENIED](./WebSecurity/Denied) | 75 |
+| Blame it on the Temp | 150 |
+| The SQL Always Sucks | 150 |
+| Cookie Monster | 200 |
+| I Have Caught You Now | 250 |
+| Extremely Malicious Language | 300 |
+| Who Is That In That Mirror | 300 |
+| FirstFail | 400 |
 
 ## Acknowledgements
 
