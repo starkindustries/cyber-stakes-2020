@@ -40,28 +40,28 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 | [Not So Meta](./Forensics/NotSoMeta) | 50 |
 | [Boot Master](./Forensics/BootMaster) | 75 |
 | [Boot Riddle](./Forensics/BootRiddle) | 100 |
-| [That's More Than Enough](./Forensics/ThatsMoreThanEnough) | 100 |
-| [Turtles All the Way Down](./Forensics/TurtlesAllTheWayDown) | 100 |
-| [Boot Racer](./Forensics/BootRacer) | 150 |
-| [Sharing is Caring](./Forensics/SharingIsCaring) | 250 |
-| [Drill to the Center](./Forensics/DrillToTheCenter) | 300 |
-| [Needle in the Haystack](./Forensics/NeedleInTheHaystack) | 300 |
+| That's More Than Enough | 100 |
+| Turtles All the Way Down | 100 |
+| Boot Racer | 150 |
+| Sharing is Caring | 250 |
+| Drill to the Center | 300 |
+| Needle in the Haystack | 300 |
 | [Kids on the Block](./Forensics/KidsOnTheBlock) | 400 |
 
 ## Miscellaneous
 
 | Challenge Name               | Points  |
 | -----------------------------|:-------:|
-| [All Your Base Are Belong to Us](./Miscellaneous/AllYourBase) | 50 |
-| [Move ZIG](./Miscellaneous/MoveZIG) | 75 |
+| [All Your Base Are Belong to Us](./Miscellaneous/AllYourBaseAreBelongToUs) | 50 |
+| Move ZIG | 75 |
 | [Proxy List](./Miscellaneous/ProxyList) | 100 |
-| [Can You Look This Over?](./Miscellaneous/CanYouLookThisOver) | 150 |
-| [Recovery And IDentification](./Miscellaneous/RecoveryAndIDentification) | 150 |
-| [I SEe You](./Miscellaneous/ISEeYou) | 200 |
-| [Partition Twice, Recover Once](./Miscellaneous/PartitionTwiceRecoverOnce) | 250 |
-| [PassThis](./Miscellaneous/PassThis) | 250 |
-| [Assembly Voyageur](./Miscellaneous/AssemblyVoyageur) | 300 |
-| [UNO Reverse Card](./Miscellaneous/UNOReverseCard) | 300 |
+| Can You Look This Over? | 150 |
+| Recovery And IDentification | 150 |
+| I SEe You | 200 |
+| Partition Twice, Recover Once | 250 |
+| PassThis | 250 |
+| Assembly Voyageur | 300 |
+| UNO Reverse Card | 300 |
 
 ## Reverse Engineering
 
