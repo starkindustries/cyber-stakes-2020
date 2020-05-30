@@ -69,15 +69,15 @@ Write-ups for the challenges in All-Army CyberStakes 4 (AACS4).
 | -----------------------------|:-------:|
 | [Reverse Engineering 101](./ReverseEngineering/ReverseEngineering101) | 25 |
 | [Lockbox](./ReverseEngineering/Lockbox) | 50 |
-| [National Dex #65](./ReverseEngineering/NationalDex65) | 100 |
-| [Read it and Weep](./ReverseEngineering/ReadItAndWeep) | 100 |
-| [What's the Difference?](./ReverseEngineering/WhatsTheDifference) | 100 |
-| [Library Card](./ReverseEngineering/LibraryCard) | 150 |
-| [Say What?](./ReverseEngineering/SayWhat) | 200 |
-| [C&C Music Factory](./ReverseEngineering/CandCMusicFactory) | 300 |
-| [CLRly just a crack-me](./ReverseEngineering/CLRlyJustACrackMe) | 300 |
-| [Are You Maching Me](./ReverseEngineering/AreYouMachingMe) | 350 |
-| [Into the Metaverse](./ReverseEngineering/IntoTheMetaverse) | 450 |
+| National Dex #65 | 100 |
+| Read it and Weep | 100 |
+| What's the Difference? | 100 |
+| Library Card | 150 |
+| Say What? | 200 |
+| C&C Music Factory | 300 |
+| CLRly just a crack-me | 300 |
+| Are You Maching Me | 350 |
+| Into the Metaverse | 450 |
 
 ## Web Security
 
