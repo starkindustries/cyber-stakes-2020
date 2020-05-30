@@ -1,38 +1,40 @@
 # Lockbox
 
-## Solve
-We developed this password-protected program which uses a super-secure, military-grade hash function with 256-bits of security to ensure only someone with the proper password can print the flag.
+
+## Reverse Engineering: 50 points
+
+## Description
+
+We developed this password-protected [program](./lockbox) which uses a super-secure, military-grade hash function with 256-bits of security to ensure only someone with the proper password can print the flag.
 
 ## Hints
-You do not need to crack the password.
-Tools like ghidra are helpful when strings isn't enough.
-Looking at calls to printf and puts is probably a good place to start.
+* You do not need to crack the password.
+* Tools like [ghidra](https://ghidra-sre.org/) are helpful when `strings` isn't enough.
+* Looking at calls to `printf` and `puts` is probably a good place to start.
 
 ## Solution
-Download the lockbox binary file. Inspect it
-
+Download the lockbox binary file. Check its file type:
+```
 $ file lockbox
 lockbox: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/l, for GNU/Linux 3.2.0, BuildID[sha1]=1b089e3c03c5c7a5d44b608bb4b7e9dc73d9ad21, not stripped
+```
 
-Try running the lockbox binary:
-
-$ ./lockbox
-bash: ./lockbox: Permission denied
-
-Need to add execute permissions:
-
+Add execute permissions:
+```
 $ chmod +x lockbox
 $ ls -la
 -rwxrwxr-x 1 zionperez zionperez 9024 May  2 11:27 lockbox
+```
 
-Now run it:
-
+Run it:
+```
 $ ./lockbox  
-Enter the password to get the flag: MyPassword
+Enter the password to get the flag: password
 Wrong password so no flag for you!
+```
 
-Now open up lockbox in Radare2 with write permission:
-
+Open up lockbox in Radare2 with write permissions:
+```
 $ r2 -w lockbox
 [0x00000830]> aaa
 [x] Analyze all flags starting with sym. and entry0 (aa)
@@ -43,9 +45,10 @@ $ r2 -w lockbox
 [x] Type matching analysis for all functions (aaft)
 [x] Propagate noreturn information
 [x] Use -AA or aaaa to perform additional experimental analysis.
+```
 
-Analyze function list:
-
+Analyze function list (afl):
+```
 [0x00000830]> afl
 0x00000830    1 42           entry0
 0x00000860    4 50   -> 40   sym.deregister_tm_clones
@@ -67,26 +70,35 @@ Analyze function list:
 0x000007f0    1 6            sym.imp.memcmp
 0x00000800    1 6            sym.imp.SHA256_Update
 0x00000810    1 6            sym.imp.SHA256_Init
+```
 
-Go to the 'main' function
-
+Go to the **main** function
+```
 [0x00000830]> s main
+```
 
 Enter visual mode.
-
+```
 > V
+```
 
-Press 'p' a few times to go to assembly mode. Press 'c' to view your cursor.
+Press **p** a few times to go to assembly mode. Press **c** to view the cursor.
 
-Notice that at address 0xA22, the assembly 'je 0xa84' checks if the test comparing the password to the hash is equal. The code 'je 0xA84' will jump to 0xA84 if the passwords match. Let's change this to jump if the passwords do not match:
+![screenshot](lockbox.png)
 
-Move your cursor over address 0xA22 (the "je0xa37" line). Type colon ':' then enter command 'wa jne 0xA84'. The command 'wa' stands for "write assembly" and 'jne' stands for "jump if not equal."
+Look at address `0xA22`. The assembly instruction `je 0xa37` checks if the password and the hash are equal. The code `je 0xa37` will jump to `0xa37` if the passwords match. Change this to jump if the passwords do not match.
 
-:> wa jne 0xA84
+Move the cursor over address `0xA22` (`je 0xa37` line). Type colon `:` then enter command `wa jne 0xa37`. The command `wa` stands for "write assembly" and `jne` stands for "jump if not equal."
+```
+:> wa jne 0xa37
+Written 2 byte(s) (jne 0xa37) = wx 7513
+```
 
-Hit enter and exit radare. Run the lockbox program again.
-$ ./lockboxEdited 
+Exit radare. Run the lockbox program again:
+```
+$ ./lockbox 
 Enter the password to get the flag: password
 flag: ACI{c0de_has_mil_grade_crypto}
+```
 
 
