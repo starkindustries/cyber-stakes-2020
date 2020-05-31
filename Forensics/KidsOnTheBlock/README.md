@@ -23,7 +23,7 @@ Help! I was ransomwared and payed the ransom. Now I want to track my coins down 
 > Note: Make sure to include contract addresses. Only include a contract address once if multiple operations were performed on it in a row. ([Here is the source of a contract on the chain][3])
 
 ## Solution
-Untar the blockchain file. This unpacks all files into the **geth_data_dir**:
+Untar the blockchain file. This unpacks all files into **geth_data_dir**:
 ```
 $ tar -xvf chain.tar.gz
 ```
@@ -69,7 +69,7 @@ Get a feel for the eth console. Try `eth.blockNumber` or `eth.getBlock(1)`. The 
 }
 ```
 
-The [KidsOnTheBlock.js][5] script has a `getAllTransactions` function. It loops through all known blocks and gets every single transaction and prints it to the console. The `gtba()` function stands for Get Transaction By Account. It gets all transactions to/from a specified account. Trace the **2.5** eth via the `gtba()` function:
+The [KidsOnTheBlock.js][5] script has a `getAllTransactions()` function. It loops through all known blocks and gets every single transaction and prints it to the console. The `gtba()` function stands for Get Transaction By Account. It gets all transactions to/from a specified account. Trace the **2.5** eth via the `gtba()` function:
 ```
 > gtba("0xb4ba4b90df51d42a7c6093e92e1c7d22874c14f2")
 Searching for transactions to/from account "0xb4ba4b90df51d42a7c6093e92e1c7d22874c14f2" within blocks 0 and 62
@@ -235,6 +235,15 @@ To sum up, the ransomed eth hopped between the following addresses:
 5. 0x4da56f7f58bc14c785cee861d25b2c417fe6853f
 6. 0x167f7969ae2ecf157306f798f63929903a02d771
 7. 0x50fc67693f00fbabc5473c3705ef057b09acf2c7
+```
+
+Plug these addresses into the webpage. 
+
+![flag](flag.png)
+
+Grab the flag:
+```
+Correct! Here is your flag: ACI{01e3e288c392e208080181d5d3e}
 ```
 
 ## Resources
